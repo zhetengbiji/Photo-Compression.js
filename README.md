@@ -1,4 +1,4 @@
-#Photo-Compression.js.js
+#Photo-Compression.js
 一个借助canvas压缩图片的js
 ##使用方法：
 compressImage(文件对象或者二进制对象,回调函数（返回base64字符串）,压缩选项（可选参数）);
