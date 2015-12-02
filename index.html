@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=320,width=640,user-scalable=no" />
+		<title>基于canvas的图片压缩</title>
+		<style>
+		</style>
+		<script src="js/Photo-Compression.0.0.1.min.js"></script>
+
+	</head>
+
+	<body>
+		<input id="imgFile" type="file" accept="image/*" />
+	</body>
+	<script>
+		var imgFile = document.getElementById('imgFile');
+		imgFile.onchange = function() {
+			var file = this.files[0];
+			compressImage(file, function(data) {
+				alert('压缩完毕');
+				console.log(data);
+			}, {
+				maxWidth: 640, //最大宽度（可选参数，数值）
+				maxHeight: 1008, //最大高度（可选参数，数值）
+				quality: 0.8, //质量（可选参数，数值，0~1）
+				scale: 1, //缩放率（可选参数，数值）
+			});
+		}
+	</script>
+
+</html>
