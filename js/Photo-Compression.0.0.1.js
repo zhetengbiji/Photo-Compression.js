@@ -1,7 +1,7 @@
-/*
- * Photo-Compression.0.0.1.js
- * 作者微博：折腾笔记
- * */
+/*!
+ *  Photo-Compression.js v0.0.1 (https://github.com/zhetengbiji/Photo-Compression.js)
+ *  作者微博：折腾笔记
+  */
 
 function compressImage(file, fn, option1) {
 	var option = {
