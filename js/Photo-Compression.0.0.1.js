@@ -1,7 +1,7 @@
 /*!
  *  Photo-Compression.js v0.0.1 (https://github.com/zhetengbiji/Photo-Compression.js)
  *  作者微博：折腾笔记
-  */
+ */
 
 function compressImage(file, fn, option1) {
 	var option = {
@@ -17,7 +17,7 @@ function compressImage(file, fn, option1) {
 		}
 	}
 	if (typeof file === 'object') {
-		var imgUrl = window.URL.createObjectURL(file);
+		var imgUrl = window.webkitURL.createObjectURL(file);
 		canvasTo(imgUrl);
 	} else if (typeof file === 'string') {
 		canvasTo(file);
@@ -43,6 +43,9 @@ function compressImage(file, fn, option1) {
 			canvas.height = imgHeight;
 			canvas2d.drawImage(img, 0, 0, imgWidth, imgHeight);
 			var base64 = canvas.toDataURL("image/jpeg", option.quality);
+			if (typeof file === 'object') {
+				window.webkitURL.revokeObjectURL(imgUrl);
+			}
 			if (typeof fn === 'function') fn(base64);
 		}
 		img.src = imgUrl;
